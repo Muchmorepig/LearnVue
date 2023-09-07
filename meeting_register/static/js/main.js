@@ -57,7 +57,7 @@ const app = {
                 this.$data.d.country.length !== 0 &&
                 this.$data.d.organization.length !== 0 &&
                 this.$data.d.role.length !== 0) {
-                const url = "http://10.10.87.96:9999/event/register"
+                const url = "http://xx.xx.xx.xx:xxxx/event/register"
                 axios({
                     method: "post",
                     url: url,
