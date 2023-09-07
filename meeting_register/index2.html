@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./static/css/bulma.min.css" rel="stylesheet" type="text/css" />
+    <link href="./static/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="./static/fontawesome_free/css/all.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Plant Science Celebration</title>
+</head>
+
+<body>
+    <section class="head_svg">
+        <div class="container">
+            <img src="./static/Snipaste.svg" alt="" sizes="" srcset="">
+        </div>
+        <!-- <div class="header container">
+                <p>
+                <h4 class="subtitle is-4">The current and former members of Detlef Weigel's lab present</h4>
+                <h1 class="title is-1">A CELEBRATION OF PLANT SCIENCE</h1>
+                <h3 class="title is-3" id="h3">AN INTERNATIONAL ONLINE SYMPOSIUM</h3>
+                <h3 class="subtitle is-3">DECEMBER 16,2021</h3>
+                </p>
+            </div> -->
+    </section>
+    <div class="container">
+        <div class="columns" id="ll">
+            <article class="message is-success is-large">
+                <div class="message-header">
+                    <p>Youtube links:</p>
+                </div>
+                <div class="message-body" id ="cb">
+                    <div class="content has-text-centered">
+                        <span>Session I : Good Evening Asia-Pacific!</span><br>
+                        <span>Start time : 9:00 AM German time</span><br><br><br>
+                        <span>
+                            <strong>Click To Session I: </strong><a href="https://youtu.be/tdapjXJcDh8">https://youtu.be/tdapjXJcDh8</a>
+                        </span>
+                    </div>
+                    <div class="content has-text-centered">
+                        <span>Session II : Good Afternoon Europe/Africa/SouthAmerica!</span><br>
+                        <span>Start time : 1:00 PM German time</span><br><br>
+                        <span>
+                            <strong>Click To Session II: </strong><a href="https://youtu.be/fRV_VYEnDdo">https://youtu.be/fRV_VYEnDdo</a>
+                        </span>
+                    </div>
+                    <div class="content has-text-centered">
+                        <span>Session III: Good Morning America!</span><br>
+                        <span>Start time : 5:00 PM German time</span><br><br><br>
+                        <span>
+                            <strong>Click To Session III: </strong><a href="https://youtu.be/lt_N7gVuZMs">https://youtu.be/lt_N7gVuZMs</a>
+                        </span>
+                    </div> 
+                </div>
+            </article>
+        </div>
+        <div class="columns">
+            <div class="column is-4">
+                <div id="app">
+                    <!-- <article class="message is-success is-medium">
+                        <div class="message-header">
+                            <p>Youtube links:</p>
+                        </div>
+                        <div class="message-body">
+                            <span>Session I : Good Evening Asia-Pacific!</span><br>
+                            <span>Start time : 9:00 AM German time</span><br>
+                            <span>
+                                <strong>Click To Session I: </strong><a href="https://youtu.be/tdapjXJcDh8">https://youtu.be/tdapjXJcDh8</a>
+                            </span><br><br>
+                            <span>Session II : Good Afternoon Europe/Africa/SouthAmerica!</span><br>
+                            <span>Start time : 1:00 PM German time</span><br>
+                            <span>
+                                <strong>Click To Session II: </strong><a href="https://youtu.be/fRV_VYEnDdo">https://youtu.be/fRV_VYEnDdo</a>
+                            </span><br><br>
+                            <span>Session III: Good Morning America!</span><br>
+                            <span>Start time : 5:00 PM German time</span><br>
+                            <span>
+                                <strong>Click To Session III: </strong><a href="https://youtu.be/lt_N7gVuZMs">https://youtu.be/lt_N7gVuZMs</a>
+                            </span>
+                        </div>
+                    </article> -->
+                    <div class="content has-text-centered">
+
+                        <div calss="content" style="margin-top:15px">
+                            <a href="./static/schedule.xlsx" download="./static/schedule.xlsx">
+                                <div class="field has-text-centered"
+                                    style="background-image: url('./static/img/tmp.jpg');">
+                                    <strong style="font-weight:700;font-size: 35px;color: rgb(170, 4, 4);">Download
+                                        Schedule</strong>
+                                </div>
+
+                            </a>
+                        </div>
+                        <h3 class="title is-3" id="h3t">Free Online Registrations</h3>
+                        <span>This event is organized as part of </span><br>
+                        <span>our commitment to plant science and is open to all members</span><br>
+                        <span>of the plant community</span>
+                    </div>
+                    <div id="tt">
+                        <div class="field">
+                            <label class="label">First Name *</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input v-model="d.name" @change="nameCheck"
+                                    v-bind:class="{ 'input' : true, 'is-danger' : el.is_wrong, 'is-checked' : !el.is_wrong }"
+                                    type="text" placeholder="e.g Zhou-geng" name="name" />
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Last Name *</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input v-model="d.surname" @change="nameCheck"
+                                    v-bind:class="{ 'input' : true, 'is-danger' : el.is_wrong, 'is-checked' : !el.is_wrong }"
+                                    type="text" placeholder="e.g Xu" name="name" />
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Email *</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input v-model="d.email" @change="isEmail"
+                                    v-bind:class="{ 'input' : true, 'is-danger' : el.is_ee, 'is-checked' : !el.is_ee }"
+                                    name="email" class="input" type="email" placeholder="e.g. zhougeng@gmail.com">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                <span class="icon is-small is-right">
+                                    <i class="fas  fa-check"></i>
+                                </span>
+                            </div>
+                            <p class="help is-danger" v-bind:style="{'display': el.is_e}">This Email is Invalid</p>
+                        </div>
+                        <div class="field">
+                            <label class="label">Organization *</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input v-model="d.organization" @change="oCheck"
+                                    v-bind:class="{ 'input' : true, 'is-danger' : el.is_o, 'is-checked' : !el.is_o }"
+                                    name="organization" class="input" type="text" placeholder="e.g CAMPS">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-university"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Country: Where to Access the Online Event *</label>
+                            <div class="control has-icons-left has-icons-right">
+                                <input v-model="d.country" @change="cCheck"
+                                    v-bind:class="{ 'input' : true, 'is-danger' : el.is_c, 'is-checked' : !el.is_c}"
+                                    name="country" class="input" type="text" placeholder="e.g China">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-globe-europe"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Which of the following best describes you? *</label>
+                            <div class="control">
+                                <div class="select">
+                                    <select id="role" name="role" v-model="d.role" title="Please select one">
+                                        <option value="undergraduate_student">Undergraduate student</option>
+                                        <option value="graduate_student">Graduate student</option>
+                                        <option value="postdoctoral_researcher">Postdoctoral researcher</option>
+                                        <option value="junior_researcher"> Junior Researcher/PI (within 5-years of
+                                            starting
+                                            group)</option>
+                                        <option value="senior_sesearcher">Senior Researcher/PI</option>
+                                        <option value="industry_researcher">Industry Researcher</option>
+                                        <option value="others">Others</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label">Reasons for participation</label>
+                            <textarea name="reason" class="textarea" placeholder="e.g. communicating"
+                                v-model="d.reason"></textarea>
+                        </div>
+                        <div class="control">
+                            <button v-bind:class="{'button':true, 'is-primary' : true, 'is-large' : true}"
+                                @click="addNote()">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-8">
+                <div class="columns">
+                    <div class="column img_col">
+                        <div class="head-img">
+                            <img class="circleImage" src="./static/img/Detlef_375x375.jpg" alt="">
+                        </div>
+                        <p>
+                        <h4 class="title is-4" id="form_col">Detlef Weigel</h4>
+                        <span>Max Planck Institute for</span>
+                        <span>Developmental Biology,</span>
+                        <span>Germany</span>
+                        <span>&nbsp;</span>
+                        </p>
+                        <div class="head-img">
+                            <img class="circleImage" src="./static/img/Sophien_375x375.jpg" alt="">
+                        </div>
+                        <p>
+                        <h4 class="title is-4">Sophien Kamoun</h4>
+                        <span>The Sainsbury Laboratory,</span>
+                        <span>UK</span>
+                        <span>&nbsp;</span>
+                        </p>
+                        <div class="head-img">
+                            <img class="circleImage" src="./static/img/Gloria_375x375.jpg" alt="">
+                        </div>
+                        <p>
+                        <h4 class="title is-4">Gloria Coruzzi</h4>
+                        <span>New York University,</span>
+                        <span>USA</span>
+                        <span>&nbsp;</span>
+                        </p>
+                    </div>
+                    <div class="column img_col">
+                        <div class="head-img">
+                            <img class="circleImage" src="./static/img/Elliot_375x375jpg.jpg" alt="">
+                        </div>
+                        <p>
+                        <h4 class="title is-4">Elliot Meycrowitz</h4>
+                        <span>The California Institute </span>
+                        <span>of Technology,</span>
+                        <span>USA</span>
+                        <span>&nbsp;</span>
+                        </p>
+
+                        <div class="head-img">
+                            <img class="circleImage" src="./static/img/Anna_375x375.jpg" alt="">
+                        </div>
+                        <p>
+                        <h4 class="title is-4">Anna-Liisa Laine</h4>
+                        <span>University of Zürich,</span>
+                        <span>Switzerland</span>
+                        <span>&nbsp;</span>
+                        </p>
+
+                        <div class="head-img">
+                            <img class="circleImage" src="./static/img/caroline_375x375.jpg" alt="">
+                        </div>
+                        <p>
+                        <h4 class="title is-4">Caroline Dean</h4>
+                        <span>John Innes Centre,</span>
+                        <span>UK</span>
+                        <span>&nbsp;</span>
+                        </p>
+
+                        <div class="head-img">
+                            <img class="circleImage" src="./static/img/Nordborg_375x375.jpg" alt="">
+                        </div>
+                        <p>
+                        <h4 class="title is-4">Magnus Nordborg</h4>
+                        <span>Gregor Mendel Institute,</span>
+                        <span>Austria</span>
+                        <span>&nbsp;</span>
+                        </p>
+                    </div>
+                    <div class="column img_col">
+                        <div class="head-img">
+                            <img class="circleImage" src="./static/img/Chory_375x375.jpg" alt="">
+                        </div>
+                        <p>
+                        <h4 class="title is-4">Joanne Chory</h4>
+                        <span>Salk Institute for</span>
+                        <span>Biological Studies,</span>
+                        <span>USA</span>
+                        <span>&nbsp;</span>
+                        </p>
+
+                        <div class="head-img">
+                            <img class="circleImage" src="./static/img/Zhou_375x375.jpg" alt="">
+                        </div>
+                        <p>
+                        <h4 class="title is-4">Jian-Min Zhou</h4>
+                        <span>Institute of Genetics and </span>
+                        <span>Developmental Biology</span>
+                        <span>CAS, China</span>
+                        <span>&nbsp;</span>
+                        </p>
+
+                        <div class="head-img">
+                            <img class="circleImage" src="./static/img/uta_375x375.jpg" alt="">
+                        </div>
+                        <p>
+                        <h4 class="title is-4">Uta Paszkowski</h4>
+                        <span>University of Cambridge,</span>
+                        <span>UK</span>
+                        <span>&nbsp;</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./static/js/vue.global.js"></script>
+    <script src="./static/js/main.js"></script>
+</body>
+
+</html>
